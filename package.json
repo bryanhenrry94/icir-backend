@@ -17,6 +17,7 @@
   "author": "Víctor Robles",
   "license": "MIT",
   "dependencies": {
+    "@angular/compiler-cli": "^10.0.0",
     "body-parser": "^1.19.0",
     "connect-multiparty": "^2.2.0",
     "cors": "^2.8.5",
