@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
     res.send('Hola bienvenido a mi api rest');
 })
 
+
+
 const auth = async (req, res, next) => {
     try {
         const token = req.header('Authorization').replace('Bearer ', '')
