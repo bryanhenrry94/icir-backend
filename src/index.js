@@ -5,8 +5,6 @@ const routes = require('./routes/index');
 const cors = require('cors');
 require('./database');
 
-app.use(__dirname + '/dist/icir-backend')
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
