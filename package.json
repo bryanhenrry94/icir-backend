@@ -1,0 +1,35 @@
+{
+  "name": "api-rest-nodejs",
+  "version": "1.0.0",
+  "description": "Api Rest del master de Javascript",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "dev": "nodemon src/index.js",    
+    "start": "node src/index.js",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "lite": "lite-server",
+    "postinstall": "ng build --aot --prod"
+  },
+  "author": "Víctor Robles",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-multiparty": "^2.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.0.14",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  },
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  }
+}
