@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ng": "ng",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
+    "start": "node index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
