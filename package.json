@@ -4,14 +4,7 @@
   "description": "Api Rest del master de Javascript",
   "main": "index.js",
   "scripts": {
-    "ng": "ng",    
-    "start": "node index.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "lite": "lite-server",
-    "postinstall": "ng build --prod --aot"
+    "start": "node index.js"
   },
   "author": "Bryan Navarrete",
   "license": "MIT",
@@ -26,9 +19,7 @@
     "mongoose": "^5.0.14",
     "path": "^0.12.7"
   },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "10.15.3",
     "npm": "6.4.1"
