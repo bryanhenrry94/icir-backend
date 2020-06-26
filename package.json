@@ -4,7 +4,7 @@
   "description": "Api Rest del master de Javascript",
   "main": "index.js",
   "scripts": {
-    "ng": "ng",
+    "ng": "ng",    
     "start": "node index.js",
     "build": "ng build",
     "test": "ng test",
