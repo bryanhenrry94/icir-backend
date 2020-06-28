@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 })
 
 
-
 const auth = async (req, res, next) => {
     try {
         const token = req.header('Authorization').replace('Bearer ', '')
@@ -345,6 +344,7 @@ router.post('/tipo_movimiento', auth, async (req, res) => {
     const newTipoMovimiento = new TipoMovimiento(
         {               
             signo: req.body.signo,
+            codigo: req.body.codigo,
             nombre: req.body.nombre 
         });
 
@@ -377,7 +377,8 @@ router.put('/tipo_movimiento/:id', auth, async (req, res) => {
     
     if(tipo_movimiento!=null){
         tipo_movimiento.signo = req.body.signo,
-        tipo_movimiento.nombre = req.body.nombre,        
+        tipo_movimiento.codigo = req.body.codigo,
+        tipo_movimiento.nombre = req.body.nombre,
         tipo_movimiento.save();
     }
     
