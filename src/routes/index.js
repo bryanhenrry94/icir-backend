@@ -341,12 +341,17 @@ router.get('/personas/existe_identificacion/:identificacion', auth, async (req, 
 //******************* Tipo Movimiento **********************//
 
 router.post('/tipo_movimiento', auth, async (req, res) => {        
-    const newTipoMovimiento = new TipoMovimiento(
-        {               
-            signo: req.body.signo,
-            codigo: req.body.codigo,
-            nombre: req.body.nombre 
-        });
+    const newTipoMovimiento = new TipoMovimiento({               
+        signo: req.body.signo,
+        codigo: req.body.codigo,
+        nombre: req.body.nombre 
+    });
+
+    if(req.body.cajas != undefined){    
+        req.body.cajas.forEach( function(valor, indice, array) {                
+            newTipoMovimiento.cajas.push(valor);            
+        });                    
+    }
 
     await newTipoMovimiento.save();
 
@@ -372,16 +377,30 @@ router.get('/tipo_movimiento/signo/:id', auth, async (req, res) => {
     res.status(200).send(JSON.stringify(tipo_movimiento));
 })
 
+router.get('/tipo_movimiento/caja/:id', auth, async (req, res) => {
+    const tipo_movimiento = await TipoMovimiento.find({'cajas._id': req.params.id});
+
+    res.status(200).send(JSON.stringify(tipo_movimiento));
+})
+
 router.put('/tipo_movimiento/:id', auth, async (req, res) => {
-    const tipo_movimiento = await TipoMovimiento.findOne({_id: req.params.id});
-    
-    if(tipo_movimiento!=null){
-        tipo_movimiento.signo = req.body.signo,
-        tipo_movimiento.codigo = req.body.codigo,
-        tipo_movimiento.nombre = req.body.nombre,
-        tipo_movimiento.save();
+    let cajas = [];
+
+    if(req.body.cajas != undefined){    
+        req.body.cajas.forEach( function(valor, indice, array) {                
+            cajas.push(valor);
+        });                    
     }
     
+    let tipo_documento = {
+        signo: req.body.signo,
+        codigo: req.body.codigo,
+        nombre: req.body.nombre,
+        cajas: cajas
+    }
+    
+    const tipo_movimiento = await TipoMovimiento.findOneAndUpdate({_id: req.params.id}, tipo_documento);    
+        
     res.status(200).send(JSON.stringify(tipo_movimiento));
 })
 
