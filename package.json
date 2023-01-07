@@ -15,11 +15,10 @@
     "connect-multiparty": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.0.14",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
   "engines": {
     "node": "10.15.3",
     "npm": "6.4.1"
