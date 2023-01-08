@@ -43,12 +43,6 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign({_id: user._id}, "SECRECT_KEY");
 
-    // let cont = 0;
-    // for(var i = 0; i < 9999999999; i++){
-    //     cont+=i;
-    // }
-    // console.log(cont);
-
     const userAuth = {
         usuario: user.usuario,
         nombre: user.nombre,
@@ -61,7 +55,7 @@ router.post('/login', async (req, res) => {
 
 //******************* USUARIOS **********************//
 
-router.post('/usuarios', auth, async (req, res) => {    
+router.post('/usuarios', async (req, res) => {    
     console.log(req.body);
 
     const newUser = new Usuario(

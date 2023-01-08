@@ -6,7 +6,7 @@ const cors = require('cors');
 require('./src/database');
 
 // sets port 3000 to default or unless otherwise specified in the environment
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 
 app.use(cors());
 app.use(bodyParser.json());
